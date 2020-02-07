@@ -1,9 +1,29 @@
-<h1>Choix de services</h1>
-<ul>
+<form class="img-rounded">
+
+  <h1>Services</h1>
+  <div class="alert alert-info">
+    <span>Choisissez les éléments à inclure</span>
+    <p>
+      {{model.countActive}}
+    </p>
+  </div>
+  <ul>
   {{#each model.services as |service|}}
     <li class="{{if service.active 'active' ''}}">
       {{service.name}} <span>{{service.price}}</span>
     </li>
   {{/each}}
 </ul>
+  <div class="total">
+    Total: <span>{{model.sumActive}}</span>
+  </div>
+  <div>
+    <div class="input-group">
+      <span class="input-group-addon">
+        <input type="checkbox" aria-label="...">
+      </span>
+      {{input type="text" class="form-control" aria-label="..." placeholder="Code promo"}}
+    </div>
+  </div>
+</form>
 {{outlet}}
