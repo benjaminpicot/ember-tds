@@ -12,9 +12,12 @@
         </p>
 
         <div class="alert alert-info alert-dismissible" role="alert">Nombre de caractères restant : <span>{{model.size}}</span></div>
-        <div class="alert alert-dismissible alert-info" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-        </div>
+        {{#if model.alertVisible}}
+          <div class="alert alert-dismissible alert-{{model.style}}" role="alert">
+            {{model.info}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+          </div>
+        {{/if}}
       </div>
     </div>
   </div>
