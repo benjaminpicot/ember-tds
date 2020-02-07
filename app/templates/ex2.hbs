@@ -9,7 +9,7 @@
   </div>
   <ul>
   {{#each model.services as |service|}}
-    <li class="{{if service.active 'active' ''}}">
+    <li {{action "toggleActive" service}} class="{{if service.active 'active' ''}}">
       {{service.name}} <span>{{service.price}}</span>
     </li>
   {{/each}}
