@@ -1,0 +1,22 @@
+<div id="note">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Ex 1 : Note Application</div>
+    <div class="panel-body">
+      <div class="form-group">
+        <p><label for="message">Note :</label>
+          <Textarea @value={{model.content}} @maxlength="{{model.MAX}}" rows="10" class="form-control"/>
+        </p>
+        <p>
+          <button class="btn btn-primary">Enregistrer</button>
+          <button class="btn btn-primary">Effacer</button>
+        </p>
+
+        <div class="alert alert-info alert-dismissible" role="alert">Nombre de caractères restant : <span>{{model.size}}</span></div>
+        <div class="alert alert-dismissible alert-info" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{outlet}}
