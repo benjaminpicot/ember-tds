@@ -4,13 +4,17 @@ export default EmberObject.extend({
   content:'',
   info:'',
   size:computed('content',function(){
+    this.set('saved',false);
     let content=this.get('content');
     if(content!==''){
       this.set('info','Note modifiée');
     }
     return this.get('MAX')-content.length;
   }),
-  style:computed('size',function(){
+  style:computed('size','saved',function(){
+    if(this.get('saved')){
+      return 'success';
+    }
     let size=this.get('size');
     if(size<20){
       return 'danger';
