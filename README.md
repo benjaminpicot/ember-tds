@@ -1,14 +1,14 @@
-# Ember-tds
+# ember-tds
 
 Each branch corresponds to a session and the EmberJS application created.
-The applications are deployed on Heroku in a pipeline.
+These applications are deployed on [Heroku](https://www.heroku.com/emberjs) in a [pipeline](https://dashboard.heroku.com/pipelines/468403b8-776b-4caf-b758-45faec9f1734).
 
 ## Repository content
 
 * TD n°1 :
 2 exercices
   * [source code](https://github.com/s4-dut-info/ember-tds/tree/td1)
-  * [deployment](https://ember-td1.herokuapp.com)
+  * [Heroku deployment](https://ember-td1.herokuapp.com)
     * [/ex1 : Note application](https://ember-td1.herokuapp.com/ex1)
     * [/ex2 : Services](https://ember-td1.herokuapp.com/ex2)
 
