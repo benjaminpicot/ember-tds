@@ -1,5 +1,4 @@
 <form class="img-rounded">
-
   <h1>Services</h1>
   <div class="alert alert-info">
     <span>Choisissez les éléments à inclure</span>
@@ -8,22 +7,28 @@
     </p>
   </div>
   <ul>
-  {{#each model.services as |service|}}
-    <li {{action "toggleActive" service}} class="{{if service.active 'active' ''}}">
-      {{service.name}} <span>{{format-currency service.price}}</span>
-    </li>
-  {{/each}}
-</ul>
+    {{#each model.services as |service|}}
+      <li {{action "toggleActive" service}} class={{if service.active "active" ""}}>
+        {{service.name}} <span>{{format-currency service.price}}</span>
+      </li>
+    {{/each}}
+  </ul>
   <div class="total">
     Total: <span>{{format-currency model.sumActive}}</span>
   </div>
   <div>
     <div class="input-group">
       <span class="input-group-addon">
-        <input type="checkbox" aria-label="...">
+        <Input {{action "updatePromo" model}} @type="checkbox" aria-label="..." @checked={{model.hasRemise}}/>
       </span>
-      {{input type="text" class="form-control" aria-label="..." placeholder="Code promo"}}
+      <Input @value={{model.promo}} class="form-control" aria-label="..." placeholder="Code promo" onkeyup={{action "updatePromo" model}}/>
     </div>
   </div>
+  {{#if model.hasRemise}}
+    <div class="total">
+      Remise :<span>{{format-percent model.remise}}</span><br>
+      Total avec remise :<span>{{format-currency model.montantTotal}}</span>
+    </div>
+  {{/if}}
 </form>
 {{outlet}}
