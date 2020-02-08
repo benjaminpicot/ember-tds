@@ -9,6 +9,8 @@ The applications are deployed on Heroku in a pipeline.
 2 exercices
   * [source code](https://github.com/s4-dut-info/ember-tds/tree/td1)
   * [deployment](https://ember-td1.herokuapp.com)
+    * [/ex1 : Note application](https://ember-td1.herokuapp.com/ex1)
+    * [/ex2 : Services](https://ember-td1.herokuapp.com/ex2)
 
 ## Prerequisites
 
