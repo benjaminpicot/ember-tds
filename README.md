@@ -1,7 +1,14 @@
-# ember-tds
+# Ember-tds
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Each branch corresponds to a session and the EmberJS application created.
+The applications are deployed on Heroku in a pipeline.
+
+## Repository content
+
+* TD n°1 :
+2 exercices
+  * [source code](https://github.com/s4-dut-info/ember-tds/tree/td1)
+  * [deployment](https://ember-td1.herokuapp.com)
 
 ## Prerequisites
 
@@ -10,12 +17,15 @@ You will need the following things properly installed on your computer.
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with npm)
 * [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
 
 ## Installation
 
 * `git clone <repository-url>` this repository
 * `cd ember-tds`
+
+## Navigation
+
+* `git checkout <branch-name>` to navigate to an application (td or project)
 * `npm install`
 
 ## Running / Development
@@ -23,30 +33,6 @@ You will need the following things properly installed on your computer.
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 * Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Linting
-
-* `npm run lint:hbs`
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 
