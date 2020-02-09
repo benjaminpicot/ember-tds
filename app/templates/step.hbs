@@ -1,4 +1,5 @@
 <form class="img-rounded" id="choixMultiples">
+  {{#if model.step}}
     <h1>Sélectionnez vos produits</h1>
     <div class="form-group">
       <div class="inline-block">
@@ -26,8 +27,26 @@
       </div>
     </div>
   <div>
-    <div class="btn btn-primary" style="width:100%;text-align: right">
+    <div {{action  "toggleStep"}} class="btn btn-primary" style="width:100%;text-align: right">
       <span>Etape suivante    </span><span aria-hidden="true" class="glyphicon glyphicon-circle-arrow-right"></span>
     </div>
   </div>
+  {{else}}
+    <div id="step2">
+      <h1>Votre choix</h1>
+      <ul>
+        {{#each model.includedItems as |item|}}
+          <li>
+            <a href="{{item.url}}"><img src="{{item.image}}" /></a>
+            <p>{{item.title}}</p>
+          </li>
+        {{/each}}
+      </ul>
+      <div>
+        <div {{action  "toggleStep"}} class="btn btn-primary" style="width:100%;text-align: right">
+          <span aria-hidden="true" class="glyphicon glyphicon-circle-arrow-left"></span><span>     Retour au choix précédent</span>
+        </div>
+      </div>
+    </div>
+  {{/if}}
 </form>

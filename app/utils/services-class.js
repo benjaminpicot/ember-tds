@@ -2,6 +2,7 @@
 import EmberObject, { computed } from '@ember/object';
 
 export default EmberObject.extend({
+  step:true,
   init(params){
     this._super(...arguments);
     this.set('dispoItems',params);

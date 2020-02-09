@@ -16,7 +16,6 @@ export default Route.extend({
       set(model,'selectedIncludedItemsIds',[]);
     },
     move:function(selectedId,selectId){
-      debugger;
       let model=this.modelFor(this.routeName);
       let source,dest,what;
       if(selectId==='s1'){
@@ -29,6 +28,10 @@ export default Route.extend({
         what='selectedIncludedItems';
       }
       this.send('addTo',get(model,source),get(model,what),get(model,dest));
+    },
+    toggleStep:function(){
+      let model=this.modelFor(this.routeName);
+      model.set('step',!model.get('step'));
     }
-  }
+  },
 });
