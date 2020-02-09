@@ -1,2 +1,4 @@
-<MultiSelect @elements={{model.dispoItems}}/>
+<MultiSelect @elements={{model.dispoItems}} @selectedIds={{model.selectedDispoItemsIds}}/>
+<button {{action "addTo" model.dispoItems model.selectedDispoItems model.includedItems}}>Test</button>
+<MultiSelect @elements={{model.includedItems}} @selectedIds={{model.selectedIncludedItemsIds}}/>
 {{outlet}}
