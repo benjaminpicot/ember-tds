@@ -5,10 +5,10 @@
     {{pluralize model.includedItems.length "" "élément sélectionné" "éléments sélectionnés"}}
   </div>
   <div class="col">
-    <button class="btn btn-info btn-block" {{action "addTo" model.dispoItems model.selectedDispoItems model.includedItems}}>+</button>
-    <button class="btn btn-info btn-block" {{action "addTo" model.dispoItems model.dispoItems model.includedItems}}> ++</button>
-    <button class="btn btn-info btn-block" {{action "addTo" model.includedItems model.selectedIncludedItems model.dispoItems}}> -</button>
-    <button class="btn btn-info btn-block" {{action "addTo" model.includedItems model.includedItems model.dispoItems}}> --</button>
+    <button disabled={{if (lte model.selectedDispoItems.length 0) "disabled" ""}} class="btn btn-info btn-block" {{action "addTo" model.dispoItems model.selectedDispoItems model.includedItems}}>+</button>
+    <button disabled={{if (lte model.dispoItems.length 0) "disabled" ""}} class="btn btn-info btn-block" {{action "addTo" model.dispoItems model.dispoItems model.includedItems}}> ++</button>
+    <button disabled={{if (lte model.selectedIncludedItems.length 0) "disabled" ""}} class="btn btn-info btn-block" {{action "addTo" model.includedItems model.selectedIncludedItems model.dispoItems}}> -</button>
+    <button disabled={{if (lte model.includedItems.length 0) "disabled" ""}} class="btn btn-info btn-block" {{action "addTo" model.includedItems model.includedItems model.dispoItems}}> --</button>
   </div>
   <div class="col-5">
     <label for="s2">Produits inclus</label>
