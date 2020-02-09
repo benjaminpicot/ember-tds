@@ -2,7 +2,7 @@
   <div class="col-5">
     <label for="s1">Produits disponibles</label>
     <MultiSelect id="s1" @elements={{model.dispoItems}} @selectedIds={{model.selectedDispoItemsIds}}/>
-    {{model.includedItems.length}} éléments sélectionnés
+    {{pluralize model.includedItems.length "" "élément sélectionné" "éléments sélectionnés"}}
   </div>
   <div class="col">
     <button class="btn btn-info btn-block" {{action "addTo" model.dispoItems model.selectedDispoItems model.includedItems}}>+</button>
