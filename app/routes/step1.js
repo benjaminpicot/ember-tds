@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 import Services from 'ember-tds/utils/services-class';
 import datas from 'ember-tds/utils/services-datas';
-import {set} from '@ember/object';
+import {set,get} from '@ember/object';
 
 export default Route.extend({
   model(){
@@ -15,5 +15,20 @@ export default Route.extend({
       set(model,'selectedDispoItemsIds',[]);
       set(model,'selectedIncludedItemsIds',[]);
     },
+    move:function(selectedId,selectId){
+      debugger;
+      let model=this.modelFor(this.routeName);
+      let source,dest,what;
+      if(selectId==='s1'){
+        source='dispoItems';
+        dest='includedItems';
+        what='selectedDispoItems';
+      }else{
+        source='includedItems';
+        dest='dispoItems';
+        what='selectedIncludedItems';
+      }
+      this.send('addTo',get(model,source),get(model,what),get(model,dest));
+    }
   }
 });

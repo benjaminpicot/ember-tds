@@ -3,7 +3,7 @@
     <div class="form-group">
       <div class="inline-block">
           <label for="s1">Produits disponibles</label>
-        <MultiSelect id="s1" @elements={{model.dispoItems}} @selectedIds={{model.selectedDispoItemsIds}}/>
+        <MultiSelect id="s1" @elements={{model.dispoItems}} @selectedIds={{model.selectedDispoItemsIds}} @dblClick="move"/>
         {{pluralize model.includedItems.length "" "élément inclu" "éléments inclus"}}
       </div>
       <div class="inline-block">
@@ -22,7 +22,7 @@
       </div>
       <div class="inline-block">
         <label for="s2">Produits inclus</label>
-        <MultiSelect id="s2" @elements={{model.includedItems}} @selectedIds={{model.selectedIncludedItemsIds}}/>
+        <MultiSelect id="s2" @elements={{model.includedItems}} @selectedIds={{model.selectedIncludedItemsIds}} @dblClick="move"/>
       </div>
     </div>
   <div>
