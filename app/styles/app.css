@@ -84,3 +84,8 @@ div.inline-block{
 select{
   min-width: 500px;
 }
+button.action-step{
+  width:100%;
+  text-align: right;
+  margin-top: 10px;
+}

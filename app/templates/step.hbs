@@ -26,11 +26,11 @@
         <MultiSelect id="s2" @elements={{model.includedItems}} @selectedIds={{model.selectedIncludedItemsIds}} @dblClick="move"/>
       </div>
     </div>
-  <div>
-    <div {{action  "toggleStep"}} class="btn btn-primary" style="width:100%;text-align: right">
-      <span>Etape suivante    </span><span aria-hidden="true" class="glyphicon glyphicon-circle-arrow-right"></span>
+    <div>
+      <button {{action  "toggleStep"}}  class="btn btn-primary action-step" disabled={{if (gt 1 model.includedItems.length) "disabled" ""}}>
+        <span>Etape suivante    </span><span aria-hidden="true" class="glyphicon glyphicon-circle-arrow-right"></span>
+      </button>
     </div>
-  </div>
   {{else}}
     <div id="step2">
       <h1>Votre choix</h1>
@@ -43,9 +43,9 @@
         {{/each}}
       </ul>
       <div>
-        <div {{action  "toggleStep"}} class="btn btn-primary" style="width:100%;text-align: right">
+        <button {{action  "toggleStep"}} class="btn btn-primary action-step">
           <span aria-hidden="true" class="glyphicon glyphicon-circle-arrow-left"></span><span>     Retour au choix précédent</span>
-        </div>
+        </button>
       </div>
     </div>
   {{/if}}
