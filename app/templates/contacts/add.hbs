@@ -1,0 +1,5 @@
+<Input @value={{model.nom}} placeholder="Nom..."/>
+<Input @value={{model.prenom}} placeholder="Prénom..."/>
+<Input type="email" @value={{model.email}} placeholder="Email..."/>
+<button {{action "save" model}}>Ajouter contact</button>
+{{outlet}}
