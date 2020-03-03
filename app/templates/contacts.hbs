@@ -1,6 +1,6 @@
 <li>
-{{#each model as |contact|}}
-  <ul>{{contact.nom}}</ul>
+{{#each model.datas as |contact|}}
+  <ul>{{contact.nom}} <LinkTo @route="contacts.edit" @model={{contact}}>...</LinkTo></ul>
 {{/each}}
 </li>
 {{outlet}}
