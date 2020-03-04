@@ -11,6 +11,7 @@ Router.map(function() {
     this.route('add');
     this.route('edit',{ path: 'edit/:contact_id' });
   });
+  this.route('test');
 });
 
 export default Router;

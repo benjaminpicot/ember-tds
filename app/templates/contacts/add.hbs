@@ -1,5 +1,8 @@
-<Input @value={{model.nom}} placeholder="Nom..."/>
-<Input @value={{model.prenom}} placeholder="Prénom..."/>
-<Input type="email" @value={{model.email}} placeholder="Email..."/>
-<button {{action "save" model}}>Ajouter contact</button>
+<fieldset class="form-group form-inline">
+  <Input @value={{model.nom}} placeholder="Nom..." class="form-control"/>
+  <Input @value={{model.prenom}} placeholder="Prénom..." class="form-control"/>
+  <Input type="email" @value={{model.email}} placeholder="Email..." class="form-control"/>
+  <button class="btn btn-primary" {{action "save" model}}>Valider</button>
+  <LinkTo class="btn btn-primary" @route="contacts">Annuler</LinkTo>
+</fieldset>
 {{outlet}}

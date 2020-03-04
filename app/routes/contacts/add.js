@@ -8,9 +8,11 @@ export default Route.extend({
   actions:{
     save:function(datas){
       let store=this.get('store');
-      let contact=store.createRecord('contact', JSON.parse(JSON.stringify(datas)));
-      contact.save();
-      this.transitionTo('contacts');
+      let contact=store.createRecord('contact',
+        datas
+      );
+      contact.save().then(()=>this.transitionTo('contacts'));
+
     }
   }
 });

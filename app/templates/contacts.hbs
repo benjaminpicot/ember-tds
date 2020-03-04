@@ -1,6 +1,19 @@
-<li>
-{{#each model.datas as |contact|}}
-  <ul>{{contact.nom}} <LinkTo @route="contacts.edit" @model={{contact}}>...</LinkTo></ul>
-{{/each}}
-</li>
+<Input class="form-control" @value={{model.filter}} placeholder="Filter..."/>
+
+<table class="table-striped table">
+  <tbody>
+    {{#each model.contacts as |contact|}}
+      <tr>
+        <td>{{contact.nom}}</td>
+        <td>{{contact.prenom}}</td>
+        <td>{{contact.email}}</td>
+        <td>
+          <LinkTo class="btn btn-primary btn-xs" @route="contacts.edit" @model={{contact}}>
+            <span class="glyphicon glyphicon-edit"></span>
+          </LinkTo>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
 {{outlet}}
